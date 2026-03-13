@@ -10,8 +10,8 @@ window.onscroll = function () { scrollFunction(); };
 function scrollFunction() {
   if (document.body.scrollTop > 660 || document.documentElement.scrollTop > 660) {
 
+    mybutton.classList.add("fade-in");
     mybutton.style.display = "block";
-
     timeline.style.display = "block";
     timeline.classList.add("fade-in");
 
@@ -42,3 +42,6 @@ window.addEventListener("scroll", function () {
   hero.style.transform =
     `translate3d(0, ${scroll / 100}%, 0) scale(${(100 - scroll / 100) / 100})`;
 });
+
+
+//menu
