@@ -15,6 +15,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 9px #999;
   margin-top: 20px;
+  margin-left: 7px;
   width: 100px;
   height: 50;
 }
@@ -37,7 +38,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 9px #999;
   margin-top: 20px;
-  width: 200px;
+  margin-left: 7px;
+  width: 210px;
   height: 50;
 }
 
@@ -52,5 +54,22 @@ body {
     background-color: #008CBA;
     border-radius: 10px;
     height: 50px;
-    width: 400px;
+    width: 430px;
+}
+
+
+.box {
+    background-color: #666;
+    width: 500px;
+    height: 550px;
+    border: 3px solid white;
+    border-radius: 50px;
+    position: absolute;
+    margin-top: 15vh;
+    margin-left: 75vh;
+}
+
+.inbox {
+    margin-left: 25px;
+    margin-top: 15px;
 }
