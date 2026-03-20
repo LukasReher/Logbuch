@@ -43,8 +43,8 @@ body {
 .topnav {
   overflow: hidden;
   display: flex;
-  gap: 20px;
-  margin-left: 10px;
+  gap: 5px;
+  margin-left: 20px;
   line-height: 1.5;
 }
 
@@ -57,12 +57,16 @@ body {
 
 .topnav a:hover {
   color: black;
- /*background-color: white;
-  border-radius: 25%;*/
+ background-color: white;
+  border-radius: 12px;
 }
 
 .topnav a.active {
   font-weight: 700;
   text-decoration: underline;
+}
+
+.backgroundButton {
+  width: 130px;
 }
 

@@ -55,6 +55,9 @@ body {
     border-radius: 10px;
     height: 50px;
     width: 430px;
+    font-size: 30px;
+    text-align: right;
+    color: lightblue;
 }
 
 

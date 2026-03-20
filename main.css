@@ -1,8 +1,4 @@
-
-
-.Überschrift {
-  position: relative;
-}
+@import url('./bgeffect.css');
 
 h1 {
    
@@ -15,9 +11,69 @@ h1 {
 p {
   font-size: 20px;
 }
+
 h5 {
   line-height: 0px;
 }
+
+@keyframes SlideInUp-1 {
+  from {
+    transform: translateY(-150px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+.SlideInUp-1 {
+  animation-name: SlideInUp-1;
+  animation-duration: 1.5s;
+}
+
+@keyframes SlideInUp-2 {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.SlideInUp-2 {
+  animation-name: SlideInUp-2;
+  animation-duration: 1s;
+}
+
+@keyframes SlideInLeft {
+  from {
+    transform: translateX(-1300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/*.SlideInLeft {
+  animation-name: SlideInLeft;
+  animation-duration: 2s;
+}*/
+
+@keyframes SlideInRight {
+  from {
+    transform: translateX(1300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/*.SlideInRight {
+  animation-name: SlideInRight;
+  animation-duration: 2s;
+}*/
 
 .fade-in {
 	opacity: 1;
@@ -84,6 +140,7 @@ body {
   display: flex;
   top: 100vh;
 }
+
 
 /*Timeline*/
 
