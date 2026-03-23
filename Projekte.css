@@ -1,3 +1,90 @@
 body {
-    
+    background-color: #2D7D90;
+}
+h1 {
+    margin-left: 5vh;
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 55px;
+}
+
+p {
+    font-size: 25px;
+}
+
+a {
+    font-size: 22px;
+}
+
+.size30 {
+    font-size: 30px;
+}
+
+.size50 {
+    font-size: 50px;
+}
+
+.Intro {
+    margin-left: 5vh;
+    font-size: 30px;
+    line-height: 15px;
+}
+
+.Pic {
+    width: 400px;
+}
+
+.Pic-Big {
+    width: 600px;
+}
+
+.Pic-Left {
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.Text-Right {
+    margin-right: 3dvh;
+    text-align: right;
+}
+
+.Pic-Right {
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+.Text-Left {
+    margin-left: 3dvh;
+    text-align: left;
+}
+
+.CatPhotoApp-Container {
+    background-color: #38A3A5;
+    height: 600px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CafeMenu-Container {
+    background-color: #48B89F;
+    height: 600px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.NumberGuessing-Container {
+    background-color: #57CC99;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

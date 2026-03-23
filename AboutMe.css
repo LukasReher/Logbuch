@@ -20,7 +20,7 @@ h2 {
 .hobby-container {
     background-color: #0dcaca;
     margin-top: -5px;
-    height: 400px;
+    height: 450px;
     display: flex;
 }
 
@@ -31,6 +31,9 @@ h2 {
 }
 
 .foto {
-    margin-left: 450px;
+    margin-left: 550px;
     border-radius: 10%;
+    height: 400px;
+    width: 450px;
+    margin-top: 2vh;
 }
