@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paypal-test</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <div id="app"></div>
+    <script type="module">
+import { loadScript } from "@paypal/paypal-js";
+
+loadScript({ clientId: "test", currency: "USD" })
+  .then((paypal) => {
+    paypal.Buttons({
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: "100.00"
+            }
+          }]
+        });
+      }
+    }).render("#test");
+  });
+    </script>
+  </body>
+</html>

@@ -60,11 +60,26 @@ a {
     text-align: left;
 }
 
+.Pic-Heading{
+    width: 800px;
+}
+
+.Calculator {
+    border-radius: 30px !important;
+}
+
+.Heading {
+    height: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .CatPhotoApp-Container {
     background-color: #38A3A5;
     height: 600px;
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,7 +89,6 @@ a {
     background-color: #48B89F;
     height: 600px;
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,6 +96,42 @@ a {
 
 .NumberGuessing-Container {
     background-color: #57CC99;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Piano-Container {
+    background-color: #6CDD99;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Calculator-Container {
+    background-color: #76E599;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Snake-Container {
+    background-color: #80ED99;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Pokedex-Container {
+    background-color: #97F0AB;
     height: 600px;
     width: 100%;
     display: flex;

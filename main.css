@@ -2,7 +2,7 @@
 
 h1 {
    
-  font-size: 70px;
+  font-size: clamp(2rem, 8vw, 4rem);
   position: fixed;
   top: 20px;
   left: 50%;
@@ -10,7 +10,7 @@ h1 {
 }
 
 p {
-  font-size: 20px;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 
 h5 {
@@ -76,6 +76,10 @@ h5 {
   animation-duration: 2s;
 }*/
 
+.Z-1 {
+  padding: 1em;
+}
+
 .fade-in {
 	opacity: 1;
 	animation-name: fadeInOpacity;
@@ -137,7 +141,7 @@ body {
   padding-bottom: 40px;
   position: relative;
   background: #636363;
-  height: 625px;
+  height: 80vh;
   display: flex;
   top: 100vh;
 }
@@ -183,7 +187,7 @@ body {
     --label-dot-size: 10px;
 
     --title-top: 4rem;
-    --title-offset-y: 30px;
+    --title-offset-y: 10px;
 
     --info-top: 8rem;
     --info-width: min(70%, 500px);
@@ -193,7 +197,7 @@ body {
     opacity: 0;
     position: fixed;
     inset: 0;
-    margin: 5rem auto;
+    margin: 2rem auto;
     width: var(--cards-container-size);
     height: var(--cards-container-size);
     padding: var(--cards-container-padding);
