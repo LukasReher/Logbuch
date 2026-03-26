@@ -8,7 +8,7 @@ console.log(timeline);
 window.onscroll = function () { scrollFunction(); };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 660 || document.documentElement.scrollTop > 660) {
+  if (document.body.scrollTop > 470 || document.documentElement.scrollTop > 470) {
 
     mybutton.classList.add("fade-in");
     mybutton.style.display = "block";
@@ -44,4 +44,29 @@ window.addEventListener("scroll", function () {
 });
 
 
-//menu
+//Side Nav
+
+function toggleNav() {
+  const sidenav = document.getElementById("mySidenav");
+
+  if (sidenav.style.width === "100vw") {
+    sidenav.style.width = "0";
+  } else {
+    sidenav.style.width = "100vw";
+  }
+}
+
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+
+let isPortrait = false;
+
+
+function checkOrientation() {
+isPortrait = window.innerHeight > window.innerWidth;
+}
+
+checkOrientation();
+window.addEventListener('resize', checkOrientation);
+

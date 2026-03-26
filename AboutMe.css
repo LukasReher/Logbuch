@@ -4,12 +4,12 @@ body {
 
 .wavepath {
     background-color: #0dcaca;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 h1 {
     font-size: 45px;
-    margin-left: 20vh;
+    margin-left: 20vh; 
     margin-top: 70px;
 }
 
@@ -20,8 +20,10 @@ h2 {
 .hobby-container {
     background-color: #0dcaca;
     margin-top: -5px;
-    height: 450px;
+    min-height: 450px;
+    height: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
 .hobbys {
@@ -31,9 +33,81 @@ h2 {
 }
 
 .foto {
-    margin-left: 550px;
     border-radius: 10%;
     height: 400px;
     width: 450px;
     margin-top: 2vh;
+    margin-right: 2vw;
+}
+
+@media (max-width: 1280px) {
+    .hobby-container {
+        flex-direction: column;
+    }
+    .Items {
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    h1, h2 {
+        margin-left: 0;
+        text-align: center;
+    }
+    .foto {
+        margin-bottom: 2vh;
+    }
+}
+
+@media (max-width: 660px) {
+    h1 {
+        font-size: 28px;
+        margin-top: 40px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .hobbys {
+        font-size: 24px;
+    }
+    .hobby-container {
+        padding: 15px;
+        min-height: auto;
+    }
+    .foto {
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+        max-width: 300px;
+    }
+    .Items {
+        text-align: center;
+        align-items: center;
+    }
+    .wavepath {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 470px) {
+    h1 {
+        font-size: 22px;
+        margin-top: 25px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    .hobbys {
+        font-size: 18px;
+    }
+    p {
+        font-size: 14px;
+    }
+    a {
+        font-size: 14px;
+    }
+    .hobby-container {
+        padding: 10px;
+    }
 }

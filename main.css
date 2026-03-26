@@ -78,6 +78,7 @@ h5 {
 
 .Z-1 {
   padding: 1em;
+
 }
 
 .fade-in {
@@ -120,7 +121,7 @@ body {
   display: flex;
   height: 100vh;
   width: 100%;
-  line-height: 10px;
+  line-height: 50px;
 }
 
 .down {
@@ -129,10 +130,11 @@ body {
   opacity: 0.8;
   height: 10px;
   width: 100%;
-  bottom: 45px;
+  bottom: 7vh;
   left: 50%;
   transform: translateX(-50%);
 }
+
 
 .content {
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
@@ -166,78 +168,79 @@ body {
       white-space: nowrap;
       border-width: 0;
   }
+
   .cards-container {
     --base-rotation: 0deg;
     --full-circle: 360deg;
-    --radius: 300px;
+    --radius: 25vw; /* Dynamische Größe je nach Bildschirm */
     --duration: 200ms;
     --items: 15;
 
-    --cards-container-size: calc(var(--radius) * 3.3);
-    --cards-container-padding: 2rem;
+    --cards-container-size: calc(var(--radius) * 2);
+    --cards-container-padding: 1rem;
 
     --border-color: transparent;
 
-    --label-offset: calc(var(--radius) * -1 - 1rem);
-    --label-size: 30px;
+    --label-offset: calc(var(--radius) * -0.9);
+    --label-size: 2rem;
     --label-color: #000000;
     --label-color-hover: steelblue;
     --label-line-h: 0;
-    --label-line-h-current: 2rem;
-    --label-dot-size: 10px;
+    --label-line-h-current: 3rem;
+    --label-dot-size: 0.8rem;
 
-    --title-top: 4rem;
-    --title-offset-y: 10px;
+    --title-top: 6rem;
+    --title-offset-y: 0.5rem;
 
-    --info-top: 8rem;
-    --info-width: min(70%, 500px);
-    --info-offset-y: 30px;
+    --info-top: 10rem;
+    --info-width: min(80%, 400px);
+    --info-offset-y: 1rem;
 
     box-sizing: content-box;
     opacity: 0;
     position: fixed;
     inset: 0;
     margin: 2rem auto;
+    margin-top: 45vh !important;
     width: var(--cards-container-size);
     height: var(--cards-container-size);
     padding: var(--cards-container-padding);
-   
 
-    @media (width > 600px){
-       clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 600px) {
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
     }
-    @media (min-width: 800px) {
-        --radius: 30vw;
-        --label-size: 40px;
-        --label-dot-size: 15px;
-        --label-line-h-current: 4rem;
-        --title-top: 26rem;
-        --info-top: 30rem;
-      }
-    
 
-    
-}
-  .cards {
-    position: absolute;
-    inset: var(--cards-container-padding);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease-in-out var(--duration);
-    list-style: none;
+    /* Für sehr kleine Bildschirme: Vollkreis oder lineare Timeline */
+    @media (max-width: 899px) {
+        clip-path: none; /* Optional: auf Mobilgeräten kann der ganze Kreis sichtbar sein */
+        width: 90vw;
+        height: 45vw; /* Halber Kreis */
+        --radius: 45vw; /* Radius halbieren, damit Labels passen */
+    }
   }
 
-
+  /* Cards */
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out var(--duration);
+  }
 
   .cards li {
     position: absolute;
     inset: 0;
-    margin: 0;
-    padding: 0;
-    transform-origin:center;
     display: grid;
     place-content: center;
+    transform-origin: center;
     transform: rotate(calc(var(--i) * 360deg / var(--items)));
     pointer-events: none;
   }
@@ -253,22 +256,21 @@ body {
     pointer-events: initial;
     text-align: center;
     color: var(--label-color);
-    font-size: clamp(.8rem, 2.5vw + .04rem,1rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     transition: var(--duration) ease-in-out;
-
   }
-  .cards li > label::before{
-      content: '';
-      position: absolute;
-      top: var(--cards-container-padding);
-      left: 50%;
-      translate: -50% 0;
-      width: var(--label-dot-size);
-      height: var(--label-dot-size);
-      aspect-ratio: 50%;
-      border-radius: 50%;
-      background-color: var(--label-color);
-      transition: background-color var(--duration) ease-in-out;
+
+  .cards li > label::before {
+    content: '';
+    position: absolute;
+    top: var(--cards-container-padding);
+    left: 50%;
+    translate: -50% 0;
+    width: var(--label-dot-size);
+    height: var(--label-dot-size);
+    border-radius: 50%;
+    background-color: var(--label-color);
+    transition: background-color var(--duration) ease-in-out;
   }
 
   .cards li > label::after {
@@ -282,39 +284,40 @@ body {
     background-color: steelblue;
     transition: height 300ms ease-in-out var(--label-line-delay,0ms);
   }
-  .cards li > label:hover{
+
+  .cards li > label:hover {
     --label-color: var(--label-color-hover);
   }
 
   .cards > li > h2,
-  .cards > li > p{
+  .cards > li > p {
     position: absolute;
     left: 50%;
     text-align: center;
     transform: translate(-50%, 0);
     transform-origin: center;
   }
-  .cards > li > h2{
+
+  .cards > li > h2 {
     top: var(--title-top);
-    opacity: var(--title-opacity,0);
+    opacity: var(--title-opacity, 0);
     translate: 0 var(--title-offset-y);
     transition: var(--duration) ease-in-out var(--title-delay,0ms);
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
-  .cards > li > p{
+
+  .cards > li > p {
     top: var(--info-top);
     margin: 0 auto;
     width: var(--info-width);
-    z-index: 2;
-    font-size: clamp(.8rem, 2.5vw + 0.05rem, .9rem);
+    font-size: clamp(0.75rem, 2vw, 1rem);
     text-align: left;
-    text-wrap: pretty;
-    opacity: var(--info-opacity,0);
-    /*translate: 0 var( --info-offset-y);*/
+    opacity: var(--info-opacity, 0);
     transition: var(--duration) ease-in-out var(--info-delay,0ms);
   }
 
-  /* update custom properties for checked item */
-  li:has(input:checked){
+  /* Checked item styles */
+  li:has(input:checked) {
       --label-opacity: 1;
       --label-color: var(--label-color-hover);
       --label-line-h: var(--label-line-h-current);
@@ -327,16 +330,14 @@ body {
       --info-opacity: 1;
       --info-offset-y: 0;
       --info-delay: calc(var(--duration) * 4);
-      /*outline: 1px dashed red;*/
   }
 
-  /* rotate container based on checked radio */
+  /* Rotate container */
   .cards:has(input:checked) {
     transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
   }
-  /*
-  this would be so much simpler if we could use counter values as custom property values
-  */
+
+  /* Index for checked cards */
   .cards:has(li:nth-child(1)>input:checked) { --index: 0; }
   .cards:has(li:nth-child(2)>input:checked) { --index: 1; }
   .cards:has(li:nth-child(3)>input:checked) { --index: 2; }
@@ -352,5 +353,18 @@ body {
   .cards:has(li:nth-child(13)>input:checked) { --index: 12; }
   .cards:has(li:nth-child(14)>input:checked) { --index: 13; }
   .cards:has(li:nth-child(15)>input:checked) { --index: 14; }
-  .cards:has(li:nth-child(16)>input:checked) { --index: 15; }
+
+  /* Mobile fallback: reduce radius for small screens */
+  @media (max-width: 600px) {
+    .cards-container {
+      --radius: 40vw;
+      --label-size: 1.5rem;
+      --label-dot-size: 0.6rem;
+      --title-top: 4rem;
+      --info-top: 6rem;
+      width: 90vw;
+      height: 90vw;
+      padding: 1rem;
+    }
+  }
 }

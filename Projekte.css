@@ -138,3 +138,100 @@ a {
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width: 1470px) {
+    .Heading,
+    .CatPhotoApp-Container,
+    .CafeMenu-Container,
+    .NumberGuessing-Container,
+    .Piano-Container,
+    .Calculator-Container,
+    .Snake-Container,
+    .Pokedex-Container {
+        flex-direction: column;
+        height: 100%;
+    }
+    .Pic, .Pic-Big, .Pic-Heading {
+        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .Text-Left, .Text-Right {
+        order: 1;
+        text-align: center;
+    }
+    .Pic, .Pic-Big, .Pic-Heading {
+        order: 2;
+    }
+}
+
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    a {
+        font-size: 16px;
+    }
+
+    .Intro {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .Pic {
+        width: 200px;
+    }
+
+    .Pic-Big {
+        width: 300px;
+    }
+
+    .Pic-Heading {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .Pic-Left,
+    .Pic-Right {
+        margin: 20px 0;
+    }
+
+    .Text-Left,
+    .Text-Right {
+        text-align: center;
+    }
+
+    .Heading,
+    .CatPhotoApp-Container,
+    .CafeMenu-Container,
+    .NumberGuessing-Container,
+    .Piano-Container,
+    .Calculator-Container,
+    .Snake-Container,
+    .Pokedex-Container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    h1,
+    .Intro,
+    .Pic-Left,
+    .Pic-Right,
+    .Text-Left,
+    .Text-Right {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+}
